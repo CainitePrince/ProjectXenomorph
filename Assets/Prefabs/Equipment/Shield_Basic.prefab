@@ -54,5 +54,5 @@ MonoBehaviour:
   Capacity: 100
   Buffer: 100
   UnitsRechargedPerSecond: 7
-  PowerConsumptionPerUnit: 5
+  PowerConsumptionPerUnit: 4
   Generator: {fileID: 0}

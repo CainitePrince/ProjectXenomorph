@@ -9,48 +9,49 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1072334018019100}
+  m_RootGameObject: {fileID: 1570241920114386}
   m_IsPrefabParent: 1
---- !u!1 &1072334018019100
+--- !u!1 &1570241920114386
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4152520174128522}
-  - component: {fileID: 114675017959861508}
+  - component: {fileID: 4609972007953842}
+  - component: {fileID: 114011773107736858}
   m_Layer: 0
-  m_Name: Generator_Basic
+  m_Name: Afterburner_Basic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4152520174128522
+--- !u!4 &4609972007953842
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1072334018019100}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1570241920114386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114675017959861508
+--- !u!114 &114011773107736858
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1072334018019100}
+  m_GameObject: {fileID: 1570241920114386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47d6585dfb463f04c9bcdffcd0b6a671, type: 3}
+  m_Script: {fileID: 11500000, guid: 11962b919eb546b47894cbfa8cfdd240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Capacity: 90
-  AvailablePower: 90
-  ProductionPerSecond: 50
+  SpeedRatio: 2
+  PowerConsumption: 150
+  Generator: {fileID: 0}
+  Vehicle: {fileID: 0}

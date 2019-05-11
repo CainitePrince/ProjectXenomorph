@@ -9,6 +9,9 @@ public class Vehicle : MonoBehaviour
     public List<Weapon> Weapons = new List<Weapon>();
     public float RaycastYOffset;
     public float RaycastLength;
+    public Afterburner Afterburner;
+
+    //private bool usingAfterburner = false;
 
     void OnDrawGizmos()
     {
@@ -17,18 +20,39 @@ public class Vehicle : MonoBehaviour
         Gizmos.DrawLine(raycastOrigin, raycastOrigin + transform.right * RaycastLength);
     }
 
-    public void PushThrottle()
+    /*
+    public void UseAfterburner()
+    {
+        if (Afterburner != null)
+        {
+            usingAfterburner = Afterburner.Use();
+        }
+    }
+    */
+
+    public void PushThrottle(bool ua = false)
     {
         Vector3 raycastOrigin = transform.parent.position;
         raycastOrigin.y += RaycastYOffset;
+
+        float speedRatio = 1.0f;
+        if (ua)
+        {
+            if (Afterburner.Use())
+            {
+                speedRatio = Afterburner.SpeedRatio;
+            }
+            //usingAfterburner = false;
+        }
 
         //Debug.DrawLine(raycastOrigin, raycastOrigin + transform.right);
         if (!Physics.Raycast(raycastOrigin, transform.right, RaycastLength))
         {
             //Vector3 position = transform.parent.position;
-            transform.parent.position += transform.parent.right * Acceleration * Time.deltaTime;
+            //Debug.Log(speedRatio);
+            transform.parent.position += transform.parent.right * speedRatio * Acceleration * Time.deltaTime;
             //transform.parent.localPosition = position;
-        }
+        }        
     }
 
     public void SteerRight()

@@ -21,7 +21,7 @@ public class NPCDriverEquipment : MonoBehaviour
         var vehicle = Instantiate(Vehicle, transform);
 
         var destroyable = vehicle.GetComponent<Destroyable>();
-        destroyable.Faction = faction;
+        destroyable.AssignedFaction = faction;
         destroyable.Armour = armour;
         destroyable.DestroyThis = gameObject;
 

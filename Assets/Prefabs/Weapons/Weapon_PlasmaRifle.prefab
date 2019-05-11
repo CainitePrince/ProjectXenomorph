@@ -52,7 +52,7 @@ Transform:
   m_GameObject: {fileID: 1972413623439188}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.3, z: 0.1}
+  m_LocalScale: {x: 0.3, y: 0.9, z: 0.3}
   m_Children:
   - {fileID: 4871455561927278}
   m_Father: {fileID: 0}
@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1246363059642302}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -1.106, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4183447450932610}
@@ -86,7 +86,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: bb4cd91a84737e5479ed4a3e520eaaae, type: 2}
+  - {fileID: 2100000, guid: 5c923e07821f5324b8d33fea74586c05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RateOfFire: 3
   PowerConsumption: 5
-  DischargePrefab: {fileID: 1451562530815992, guid: 85fea332e7fb5104bb3dac9f5a05ce77,
+  DischargePrefab: {fileID: 114382809770841386, guid: 85fea332e7fb5104bb3dac9f5a05ce77,
     type: 2}
   Nozzle: {fileID: 4871455561927278}
   Generator: {fileID: 0}

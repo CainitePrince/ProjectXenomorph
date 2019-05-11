@@ -31,5 +31,17 @@ public class RandomNPCDriver : MonoBehaviour
 
         var faction = GetComponent<AssignedFaction>();
         faction.Faction = (Faction)random.Next(3);
+
+        var inventory = GetComponent<Inventory>();
+        inventory.Items.Add(equipment.Generator.gameObject);
+        inventory.Items.Add(equipment.Armour.gameObject);
+        if (equipment.Shield)
+        {
+            inventory.Items.Add(equipment.Shield.gameObject);
+        }
+        foreach (var weapon in equipment.Weapons)
+        {
+            inventory.Items.Add(weapon.gameObject);
+        }
 	}
 }

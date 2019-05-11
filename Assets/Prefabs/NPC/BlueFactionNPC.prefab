@@ -75,6 +75,8 @@ GameObject:
   - component: {fileID: 114859745585291976}
   - component: {fileID: 114173980144037942}
   - component: {fileID: 114359842995970550}
+  - component: {fileID: 114565724766394992}
+  - component: {fileID: 114460999576926900}
   m_Layer: 0
   m_Name: BlueFactionNPC
   m_TagString: Untagged
@@ -211,6 +213,36 @@ MonoBehaviour:
   Weapons:
   - {fileID: 114706385810320850, guid: e72be0cbfd1432044bde5403419b3f78, type: 2}
   HealthBars: {fileID: 114789493191358144}
+--- !u!114 &114460999576926900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1537239223614504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9dbeedf80721554fb9f8226ccf5941f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Items:
+  - {fileID: 1743871444928916, guid: 5ed9be7064244514d8a0cd399b8b8acc, type: 2}
+  - {fileID: 1031428559012078, guid: 8c65602eb8ea0c240a3033415076ae01, type: 2}
+  - {fileID: 1851115726654862, guid: 0f6ca3f3e2fec214694a61b7930fbdc7, type: 2}
+  - {fileID: 1693968888436396, guid: e72be0cbfd1432044bde5403419b3f78, type: 2}
+--- !u!114 &114565724766394992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1537239223614504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3491d8acf3479414792e65bc6b885546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Drops: []
+  ItemDropPrefab: {fileID: 114824712953034614, guid: c56869b6dc1c35b43b0d51a7de79b633,
+    type: 2}
 --- !u!114 &114789493191358144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -330,14 +362,14 @@ RectTransform:
   m_GameObject: {fileID: 1636122196313638}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.29999998, y: 0.0100000035, z: 1.0000005}
+  m_LocalScale: {x: 1.2, y: 0.04, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 224676902780783090}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00000071525574, y: 17.2}
+  m_AnchoredPosition: {x: 0.00000071525574, y: 62.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224384827960727158
@@ -347,15 +379,15 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037704683079578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.29999998, y: 0.0100000035, z: 1.0000005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.2, y: 0.04, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 224676902780783090}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00000071525574, y: 14.7}
+  m_AnchoredPosition: {x: 0.00000071525574, y: 52.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224676902780783090
@@ -377,7 +409,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.633}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224873475890211896
 RectTransform:
@@ -387,13 +419,13 @@ RectTransform:
   m_GameObject: {fileID: 1353657870483348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.01, z: 1}
+  m_LocalScale: {x: 1.2, y: 0.04, z: 1}
   m_Children: []
   m_Father: {fileID: 224676902780783090}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -12.1}
+  m_AnchoredPosition: {x: 0, y: -62.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

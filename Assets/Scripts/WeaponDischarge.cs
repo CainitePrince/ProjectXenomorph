@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class WeaponDischarge : MonoBehaviour
 {
-    public float    LifeTime = 5;
-    public float    Speed = 10;
-    public Faction  Faction = Faction.Red;
-    public int      Damage = 10;
+    public float        LifeTime = 5;
+    public float        Speed = 10;
+    public Faction      Faction = Faction.Red;
+    public int          ShieldDamage;
+    public int          ArmourDamage;
+    public GameObject   Owner;
 
     private float   EndTime;
 

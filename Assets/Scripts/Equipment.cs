@@ -9,6 +9,7 @@ public class Equipment : MonoBehaviour
     public Shield       Shield;
     public Generator    Generator;
     public List<Weapon> Weapons;
+    public Afterburner  Afterburner;
 
 	void Start ()
     {
@@ -20,7 +21,7 @@ public class Equipment : MonoBehaviour
         var vehicle = Instantiate(Vehicle, transform);
 
         var destroyable = vehicle.GetComponent<Destroyable>();
-        destroyable.Faction = faction;
+        destroyable.AssignedFaction = faction;
         destroyable.Armour = armour;
         destroyable.DestroyThis = gameObject;
 
@@ -30,6 +31,14 @@ public class Equipment : MonoBehaviour
         player.Vehicle = vehicle;
 
         var generator = Instantiate(Generator, transform);
+
+        if (Afterburner)
+        {
+            var afterburner = Instantiate(Afterburner, transform);
+            afterburner.Generator = generator;
+            vehicle.Afterburner = afterburner;
+            afterburner.Vehicle = vehicle;
+        }
 
         if (Shield)
         {

@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583975428246278}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.70710677}
-  m_LocalPosition: {x: 3.1798882, y: 0.678, z: 2.394}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,9 +97,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeTime: 5
-  Speed: 13
+  Speed: 30
   Faction: 0
-  Damage: 10
+  ShieldDamage: 12
+  ArmourDamage: 8
+  Owner: {fileID: 0}
 --- !u!136 &136897302143872054
 CapsuleCollider:
   m_ObjectHideFlags: 1

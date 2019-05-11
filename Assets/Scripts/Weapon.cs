@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public float RateOfFire;
     public float PowerConsumption;
-    public GameObject DischargePrefab;
+    public WeaponDischarge DischargePrefab;
     public Transform Nozzle;
     public Generator Generator;
 
@@ -25,10 +25,11 @@ public class Weapon : MonoBehaviour
 
             Generator.AvailablePower -= PowerConsumption;
 
-            GameObject discharge = Instantiate(DischargePrefab);
+            WeaponDischarge discharge = Instantiate(DischargePrefab);
             discharge.transform.position = Nozzle.position;
             discharge.transform.rotation = Nozzle.rotation;
-            discharge.GetComponent<WeaponDischarge>().Faction = faction;
+            discharge.Faction = faction;
+            discharge.Owner = transform.parent.parent.gameObject;
         }
     }
 }

@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4108627404133436}
   - component: {fileID: 114190678593194002}
+  - component: {fileID: 114380901105274226}
   m_Layer: 0
   m_Name: Armour_Red_T1
   m_TagString: Untagged
@@ -53,3 +54,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Buffer: 600
   Capacity: 600
+--- !u!114 &114380901105274226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896201023832602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1306a9ebf52e941bce2eee2690f4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasePrice: 0

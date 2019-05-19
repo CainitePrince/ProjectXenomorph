@@ -3,24 +3,24 @@
 public class Player : MonoBehaviour
 {
     public Vehicle Vehicle;
-
-    //bool tab = false;
+    public GameObject InventoryScreen;
+    public GameObject GameScreen;
 
 	void Update ()
     {
-        //if (Input.GetKey(KeyCode.Tab))
-        //{
-        //    Vehicle.UseAfterburner();
-        //}
-        //if (Input.GetKeyDown(KeyCode.Tab))
-        //{
-        //    tab = true;
-        //}
-
-        //if (Input.GetKeyUp(KeyCode.Tab))
-        //{
-        //    tab = false;
-        //}
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (!InventoryScreen.activeInHierarchy)
+            {
+                InventoryScreen.SetActive(true);
+                GameScreen.SetActive(false);
+            }
+            else
+            {
+                InventoryScreen.SetActive(false);
+                GameScreen.SetActive(true);
+            }
+        }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {

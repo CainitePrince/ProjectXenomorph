@@ -30,43 +30,54 @@ public class Destroyable : MonoBehaviour
                 discharge.Remove();
             }
 
-            if (GodMode) return;
+            HandleHit(discharge.ShieldDamage, discharge.ArmourDamage, discharge.Faction);
+        }
+    }
 
-            if (discharge.Faction != AssignedFaction.Faction)
+    public void HandleHit(float shieldDamage, float armourDamage, Faction faction)
+    {
+        if (GodMode) return;
+
+        if (faction != AssignedFaction.Faction)
+        {
+            if (Shield)
             {
-                if (Shield)
-                {
-                    Shield.Buffer -= discharge.ShieldDamage;
+                Shield.Buffer -= shieldDamage;
 
-                    if (Shield.Buffer < 0)
-                    {
-                        float surplus = Mathf.Abs(Shield.Buffer);
-                        Shield.Buffer = 0;
-                        float percentageLeft = 1.0f - surplus / discharge.ShieldDamage;
-                        Armour.Buffer -= percentageLeft * discharge.ArmourDamage;
-                    }
-                    else
-                    {
-                        StartCoroutine(ShieldFlicker());
-                    }
+                if (Shield.Buffer < 0)
+                {
+                    float surplus = Mathf.Abs(Shield.Buffer);
+                    Shield.Buffer = 0;
+                    float percentageLeft = 1.0f - surplus / shieldDamage;
+                    Armour.Buffer -= percentageLeft * armourDamage;
                 }
                 else
                 {
-                    Armour.Buffer -= discharge.ArmourDamage;
+                    StartCoroutine(ShieldFlicker());
+                }
+            }
+            else
+            {
+                Armour.Buffer -= armourDamage;
+            }
+
+            if (Armour.Buffer <= 0)
+            {
+                // Clean up object
+                Destroy(DestroyThis);
+
+                // Drop items, if applicable
+                if (drops)
+                {
+                    drops.Drop();
                 }
 
-                if (Armour.Buffer <= 0)
+                // Some NPC have bounties on them.
+                if (faction == Faction.Player)
                 {
-                    Destroy(DestroyThis);
-
-                    if (drops)
+                    var bounty = GetComponentInParent<Bounty>();
+                    if (bounty)
                     {
-                        drops.Drop();
-                    }
-
-                    if (discharge.Faction == Faction.Player)
-                    {
-                        var bounty = GetComponentInParent<Bounty>();
                         playerInventory.Credits += bounty.Credits;
                     }
                 }

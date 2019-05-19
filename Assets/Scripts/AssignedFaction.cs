@@ -8,7 +8,9 @@ public enum Faction
     Blue,
     Green,
     Player,
-    Pirate
+    Pirate,
+    Neutral,
+    Civilian
 };
 
 public class AssignedFaction : MonoBehaviour

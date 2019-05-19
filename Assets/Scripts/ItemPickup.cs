@@ -10,8 +10,6 @@ public class ItemPickup : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        Debug.Log("OnCollisionEnter");
-
         // Prevent running multiple times.
         if (triggered) return;
 

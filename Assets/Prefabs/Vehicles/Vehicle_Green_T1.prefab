@@ -73,7 +73,8 @@ GameObject:
   - component: {fileID: 114600074693189334}
   - component: {fileID: 114829951275995400}
   - component: {fileID: 114990292275175098}
-  m_Layer: 0
+  - component: {fileID: 114913871994718854}
+  m_Layer: 10
   m_Name: Vehicle_Green_T1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,6 +527,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Faction: {fileID: 0}
+--- !u!114 &114913871994718854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1433235251728628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1306a9ebf52e941bce2eee2690f4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasePrice: 0
 --- !u!114 &114990292275175098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -537,8 +550,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2e212af0915854fb64aea902d7e020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Faction: {fileID: 0}
+  AssignedFaction: {fileID: 0}
   Armour: {fileID: 0}
   Shield: {fileID: 0}
   ShieldBubble: {fileID: 1936455649305074}
   DestroyThis: {fileID: 0}
+  GodMode: 0

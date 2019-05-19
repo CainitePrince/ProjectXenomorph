@@ -90,7 +90,8 @@ GameObject:
   - component: {fileID: 114785647665727144}
   - component: {fileID: 114549055069128484}
   - component: {fileID: 54450747982359982}
-  m_Layer: 0
+  - component: {fileID: 114729733771594456}
+  m_Layer: 10
   m_Name: Vehicle_Basic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,6 +600,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Faction: {fileID: 0}
+--- !u!114 &114729733771594456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1525943374453854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1306a9ebf52e941bce2eee2690f4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasePrice: 0
 --- !u!114 &114785647665727144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -610,9 +623,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2e212af0915854fb64aea902d7e020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Faction: {fileID: 0}
+  AssignedFaction: {fileID: 0}
   Armour: {fileID: 0}
   Shield: {fileID: 0}
   ShieldBubble: {fileID: 1928875960558298}
   DestroyThis: {fileID: 0}
-  GodMode: 1
+  GodMode: 0

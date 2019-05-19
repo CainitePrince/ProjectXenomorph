@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 114084094144887308}
   - component: {fileID: 114655237651357978}
   - component: {fileID: 114053727392434872}
+  - component: {fileID: 114861798820626464}
   m_Layer: 0
   m_Name: RandomNPC
   m_TagString: Untagged
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Items: []
+  Credits: 0
 --- !u!114 &114057445597192572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,6 +336,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets: []
   Faction: {fileID: 114863657983431364}
+--- !u!114 &114861798820626464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1766271700664128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a1eb2554e85984eba147f23cdd7409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Credits: 100
 --- !u!114 &114863657983431364
 MonoBehaviour:
   m_ObjectHideFlags: 1

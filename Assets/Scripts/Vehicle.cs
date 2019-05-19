@@ -30,15 +30,15 @@ public class Vehicle : MonoBehaviour
     }
     */
 
-    public void PushThrottle(bool ua = false)
+    public void PushThrottle(bool useAfterburner = false)
     {
         Vector3 raycastOrigin = transform.parent.position;
         raycastOrigin.y += RaycastYOffset;
 
         float speedRatio = 1.0f;
-        if (ua)
+        if (useAfterburner)
         {
-            if (Afterburner.Use())
+            if (Afterburner && Afterburner.Use())
             {
                 speedRatio = Afterburner.SpeedRatio;
             }

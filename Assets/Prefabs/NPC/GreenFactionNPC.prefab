@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114689112082526496}
   - component: {fileID: 114982767133010336}
   - component: {fileID: 114666447438941560}
+  - component: {fileID: 114781311097821332}
   m_Layer: 0
   m_Name: GreenFactionNPC
   m_TagString: Untagged
@@ -215,6 +216,7 @@ MonoBehaviour:
   - {fileID: 1252506303547650, guid: 5b9b3edf82f75c745b3278f6de0dc65c, type: 2}
   - {fileID: 1972413623439188, guid: 975228efe7f244f44acec3f702a28688, type: 2}
   - {fileID: 1972413623439188, guid: 975228efe7f244f44acec3f702a28688, type: 2}
+  Credits: 0
 --- !u!114 &114689112082526496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,6 +264,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114781311097821332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019237870348836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a1eb2554e85984eba147f23cdd7409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Credits: 100
 --- !u!114 &114961640224236678
 MonoBehaviour:
   m_ObjectHideFlags: 1

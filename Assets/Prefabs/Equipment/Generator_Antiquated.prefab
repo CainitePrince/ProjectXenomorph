@@ -9,30 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1719512228091430}
+  m_RootGameObject: {fileID: 1072334018019100}
   m_IsPrefabParent: 1
---- !u!1 &1719512228091430
+--- !u!1 &1072334018019100
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4543665231435112}
-  - component: {fileID: 114336176503854524}
+  - component: {fileID: 4152520174128522}
+  - component: {fileID: 114675017959861508}
+  - component: {fileID: 114457148677309760}
   m_Layer: 0
-  m_Name: Armour_Basic
+  m_Name: Generator_Antiquated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4543665231435112
+--- !u!4 &4152520174128522
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1719512228091430}
+  m_GameObject: {fileID: 1072334018019100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,16 +41,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114336176503854524
+--- !u!114 &114457148677309760
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1719512228091430}
+  m_GameObject: {fileID: 1072334018019100}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f04e09ea0acd44487292e61a6d3ccd, type: 3}
+  m_Script: {fileID: 11500000, guid: fe1306a9ebf52e941bce2eee2690f4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Buffer: 300
-  Capacity: 300
+  BasePrice: 10
+  Name: Antiquated generator
+  Description: This power source makes an awful racket, while it sputters along.
+--- !u!114 &114675017959861508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072334018019100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d6585dfb463f04c9bcdffcd0b6a671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Capacity: 25
+  AvailablePower: 25
+  ProductionPerSecond: 30

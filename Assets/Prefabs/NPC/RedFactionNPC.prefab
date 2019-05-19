@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 114365855711936556}
   - component: {fileID: 114600345527341848}
   - component: {fileID: 114786809069495174}
+  - component: {fileID: 114883988941690174}
   m_Layer: 0
   m_Name: RedFactionNPC
   m_TagString: Untagged
@@ -300,6 +301,19 @@ MonoBehaviour:
   - {fileID: 1896201023832602, guid: 9042e7762f34a434f845c43a3fc726e8, type: 2}
   - {fileID: 1874879212172794, guid: 16492c0ce3dfa8a45a13785e48c2a99f, type: 2}
   - {fileID: 1523609784451498, guid: f3aea535bc5861e479ffb9a95093152a, type: 2}
+  Credits: 0
+--- !u!114 &114883988941690174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1726007168955092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a1eb2554e85984eba147f23cdd7409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Credits: 100
 --- !u!114 &114941020979918910
 MonoBehaviour:
   m_ObjectHideFlags: 1

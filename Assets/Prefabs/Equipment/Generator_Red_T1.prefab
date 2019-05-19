@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4188509993432534}
   - component: {fileID: 114353720094437220}
+  - component: {fileID: 114628047771127012}
   m_Layer: 0
   m_Name: Generator_Red_T1
   m_TagString: Untagged
@@ -54,3 +55,15 @@ MonoBehaviour:
   Capacity: 400
   AvailablePower: 400
   ProductionPerSecond: 20
+--- !u!114 &114628047771127012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1874879212172794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1306a9ebf52e941bce2eee2690f4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasePrice: 0

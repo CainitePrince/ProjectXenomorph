@@ -91,7 +91,8 @@ GameObject:
   - component: {fileID: 114953559012442806}
   - component: {fileID: 114956932854099460}
   - component: {fileID: 114455860707012746}
-  m_Layer: 0
+  - component: {fileID: 114412756963930580}
+  m_Layer: 10
   m_Name: Vehicle_Blue_T1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,6 +553,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.5, y: 1.5, z: 3}
   m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!114 &114412756963930580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1598657528087420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1306a9ebf52e941bce2eee2690f4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasePrice: 0
 --- !u!114 &114455860707012746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -563,11 +576,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2e212af0915854fb64aea902d7e020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Faction: {fileID: 0}
+  AssignedFaction: {fileID: 0}
   Armour: {fileID: 0}
   Shield: {fileID: 0}
   ShieldBubble: {fileID: 1818134911079608}
   DestroyThis: {fileID: 0}
+  GodMode: 0
 --- !u!114 &114953559012442806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -586,6 +600,7 @@ MonoBehaviour:
   Weapons: []
   RaycastYOffset: 0.75
   RaycastLength: 2.5
+  Afterburner: {fileID: 0}
 --- !u!114 &114956932854099460
 MonoBehaviour:
   m_ObjectHideFlags: 1

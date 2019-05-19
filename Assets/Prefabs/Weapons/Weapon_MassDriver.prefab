@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 114830403862627968}
   - component: {fileID: 23412089123604428}
   - component: {fileID: 33889473688828964}
+  - component: {fileID: 114560257820473766}
   m_Layer: 0
   m_Name: Weapon_MassDriver
   m_TagString: Untagged
@@ -113,6 +114,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1523609784451498}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114560257820473766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1523609784451498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1306a9ebf52e941bce2eee2690f4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasePrice: 0
+  Name: 
+  Description: 
 --- !u!114 &114830403862627968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,9 +139,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5736f8a24d0e81e4abb0d1e70e3aca61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateOfFire: 0.5
-  PowerConsumption: 80
-  DischargePrefab: {fileID: 114898478674996918, guid: de77621cde832294aa2a8d32bd3c30c3,
-    type: 2}
   Nozzle: {fileID: 4754893359897422}
   Generator: {fileID: 0}
+  PowerConsumption: 40
+  Type: 0
+  ShieldDamage: 40
+  ArmourDamage: 50
+  DischargePrefab: {fileID: 114898478674996918, guid: de77621cde832294aa2a8d32bd3c30c3,
+    type: 2}
+  MaxDistance: 100
+  RateOfFire: 0.5
+  Layers:
+    serializedVersion: 2
+    m_Bits: 1536
+  ProjectileSpeed: 18
+  LifeTime: 0
+  Continuous: 0

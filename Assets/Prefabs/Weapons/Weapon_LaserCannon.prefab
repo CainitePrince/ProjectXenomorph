@@ -22,8 +22,9 @@ GameObject:
   - component: {fileID: 114706385810320850}
   - component: {fileID: 33512079521751810}
   - component: {fileID: 23334088118853498}
+  - component: {fileID: 114209429797836326}
   m_Layer: 0
-  m_Name: Weapon_LaserRifle
+  m_Name: Weapon_LaserCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,6 +114,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1693968888436396}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114209429797836326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1693968888436396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1306a9ebf52e941bce2eee2690f4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasePrice: 0
+  Name: 
+  Description: 
 --- !u!114 &114706385810320850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,9 +139,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5736f8a24d0e81e4abb0d1e70e3aca61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateOfFire: 5
-  PowerConsumption: 6
-  DischargePrefab: {fileID: 114494688046236472, guid: 00ec2bd3f4da56a438220d73df061456,
-    type: 2}
   Nozzle: {fileID: 4257296020944606}
   Generator: {fileID: 0}
+  PowerConsumption: 30
+  Type: 0
+  ShieldDamage: 48
+  ArmourDamage: 40
+  DischargePrefab: {fileID: 114494688046236472, guid: 00ec2bd3f4da56a438220d73df061456,
+    type: 2}
+  MaxDistance: 100
+  RateOfFire: 5
+  Layers:
+    serializedVersion: 2
+    m_Bits: 1536
+  ProjectileSpeed: 30
+  LifeTime: 0
+  Continuous: 0

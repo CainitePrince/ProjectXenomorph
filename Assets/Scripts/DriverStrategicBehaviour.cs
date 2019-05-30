@@ -20,8 +20,8 @@ public class DriverStrategicBehaviour : MonoBehaviour
         {
             if (target != null)
             {
-                Vector3 targetToMe = transform.position - target.position;
-                Vector3 targetForward = transform.right;
+                Vector3 targetToMe = Vector3.Normalize(transform.position - target.position);
+                Vector3 targetForward = transform.forward;
 
                 float angle = Vector3.Dot(targetToMe, targetForward);
                 if (angle > 0.8)
@@ -61,19 +61,23 @@ public class DriverStrategicBehaviour : MonoBehaviour
         {
             case NPCDriverState.Pursue:
                 PickTarget();
-
+                /*
                 if (IsBeingTargeted())
                 {
                     State = NPCDriverState.Evade;
                     EndEvadeTime = Time.time + 0.2f;
                 }
+                */
                 break;
 
             case NPCDriverState.Evade:
+                /*
                 if (!IsBeingTargeted() && Time.time >= EndEvadeTime)
                 {
                     State = NPCDriverState.Pursue;
                 }
+                */
+                State = NPCDriverState.Pursue;
                 break;
         }
     }

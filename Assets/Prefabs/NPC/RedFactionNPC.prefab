@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 114600345527341848}
   - component: {fileID: 114786809069495174}
   - component: {fileID: 114883988941690174}
+  - component: {fileID: 195757936396864970}
   m_Layer: 0
   m_Name: RedFactionNPC
   m_TagString: Untagged
@@ -329,6 +330,28 @@ MonoBehaviour:
   StrategicBehaviour: {fileID: 114200089716954822}
   Vehicle: {fileID: 0}
   Faction: {fileID: 114711623752426034}
+  Agent: {fileID: 0}
+--- !u!195 &195757936396864970
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1726007168955092}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 2.5
+  m_Speed: 4.5
+  m_Acceleration: 4.5
+  avoidancePriority: 50
+  m_AngularSpeed: 79
+  m_StoppingDistance: 5
+  m_AutoTraverseOffMeshLink: 0
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 4
 --- !u!222 &222493764871393626
 CanvasRenderer:
   m_ObjectHideFlags: 1

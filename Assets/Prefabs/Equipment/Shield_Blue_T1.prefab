@@ -55,7 +55,7 @@ MonoBehaviour:
   Capacity: 350
   Buffer: 350
   UnitsRechargedPerSecond: 10
-  PowerConsumptionPerUnit: 4
+  PowerConsumption: 50
   Generator: {fileID: 0}
 --- !u!114 &114283560946551850
 MonoBehaviour:
@@ -69,3 +69,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BasePrice: 0
+  Name: 
+  Description: 

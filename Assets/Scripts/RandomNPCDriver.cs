@@ -29,8 +29,8 @@ public class RandomNPCDriver : MonoBehaviour
             equipment.Weapons.Add(Weapons[random.Next(Weapons.Length)]);
         }
 
-        var faction = GetComponent<AssignedFaction>();
-        faction.Faction = (Faction)random.Next(3);
+        //var faction = GetComponent<AssignedFaction>();
+        //faction.Faction = (Faction)random.Next(3);
 
         var inventory = GetComponent<Inventory>();
         inventory.Items.Add(equipment.Generator.gameObject);

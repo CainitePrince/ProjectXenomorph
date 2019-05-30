@@ -96,12 +96,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec201f8d373ef3246a6a7b3a409c7aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeTime: 5
-  Speed: 18
   Faction: 0
   ShieldDamage: 80
   ArmourDamage: 100
   Owner: {fileID: 0}
+  EndTime: 0
+  Line: {fileID: 0}
+  BeamStart: {x: 0, y: 0, z: 0}
+  BeamEnd: {x: 0, y: 0, z: 0}
+  Pool: {fileID: 0}
+  Direction: {x: 0, y: 0, z: 0}
+  Front: {x: 0, y: 0, z: 1}
+  ExplosionRadius: 0
+  Gravity: {x: 0, y: 0, z: 0}
+  Mask:
+    serializedVersion: 2
+    m_Bits: 0
+  particles: {fileID: 0}
+  Type: 0
 --- !u!135 &135548606231374094
 SphereCollider:
   m_ObjectHideFlags: 1

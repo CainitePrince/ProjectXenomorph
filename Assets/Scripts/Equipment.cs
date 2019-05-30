@@ -10,6 +10,7 @@ public class Equipment : MonoBehaviour
     public Generator    Generator;
     public List<Weapon> Weapons;
     public Afterburner  Afterburner;
+    public List<Turret> Turrets;
 
 	void Start ()
     {
@@ -57,7 +58,17 @@ public class Equipment : MonoBehaviour
         {
             var weapon = Instantiate(Weapons[i], vehicle.HardPoints[i]);
             weapon.Generator = generator;
+            weapon.Owner = vehicle.gameObject;
             vehicle.Weapons.Add(weapon);
+        }
+
+        for (int i = 0; i < Turrets.Count; ++i)
+        {
+            var turret = Instantiate(Turrets[i], vehicle.Turrets[i]);
+            turret.Faction = faction;
+            turret.Generator = generator;
+            turret.Owner = vehicle.gameObject;
+            //vehicle.Turrets.Add(turret);
         }
 	}
 }

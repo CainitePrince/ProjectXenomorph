@@ -41,6 +41,8 @@ public class UI : MonoBehaviour
             {
                 ShieldBar.fillAmount = 0;
             }
+
+            // This allocates memory
             CreditsValue.text = playerInventory.Credits.ToString();
         }
 	}

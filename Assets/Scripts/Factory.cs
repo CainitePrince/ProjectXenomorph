@@ -6,6 +6,8 @@ public class Factory : MonoBehaviour
 {
     public float ProductionTime;
     public GameObject Item;
+    public float TimeLeft;
+    public Transform SpawnPoint;
 
     private float nextProductionTime;
 
@@ -16,9 +18,11 @@ public class Factory : MonoBehaviour
 	
 	void Update ()
     {
+        TimeLeft = nextProductionTime - Time.time;
+
 	    if (Time.time >= nextProductionTime)
         {
-            Instantiate(Item);
+            Instantiate(Item, SpawnPoint.position, SpawnPoint.rotation);
 
             nextProductionTime = Time.time + ProductionTime;
         }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Afterburner : MonoBehaviour
 {
@@ -8,8 +6,6 @@ public class Afterburner : MonoBehaviour
     public float PowerConsumption;
     public Generator Generator;
     public Vehicle Vehicle;
-
-    //bool sub = false;
 
     float nextFireTime;
 
@@ -20,12 +16,9 @@ public class Afterburner : MonoBehaviour
 
     public bool Use()
     {
-        //Debug.Log("Using");
-        
         if ((PowerConsumption * Time.deltaTime) <= Generator.AvailablePower && Time.time >= nextFireTime)
         {
             Generator.AvailablePower -= PowerConsumption * Time.deltaTime;
-            //sub = true;
             return true;
         }
         else
@@ -34,22 +27,5 @@ public class Afterburner : MonoBehaviour
         }
         
         return false;
-        //{
-            //Debug.Log("Sub");
-            //Generator.AvailablePower = Generator.AvailablePower - (PowerConsumption * Time.deltaTime);
-            //Generator.UsePower(PowerConsumption * Time.deltaTime);
-            //return true;
-        //}
-        //return false;
-    }
-
-    void Update()
-    {
-        //if (sub)
-        //{
-            //Generator.AvailablePower -= PowerConsumption * Time.deltaTime;
-            //Debug.Log(Generator.AvailablePower);
-            //sub = false;
-        //}
     }
 }

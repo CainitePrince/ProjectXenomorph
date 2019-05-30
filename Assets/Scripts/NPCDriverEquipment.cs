@@ -10,6 +10,7 @@ public class NPCDriverEquipment : MonoBehaviour
     public Generator Generator;
     public List<Weapon> Weapons;
     public NPCHealthBars HealthBars;
+    public List<Turret> Turrets;
 
     void Start()
     {
@@ -29,7 +30,10 @@ public class NPCDriverEquipment : MonoBehaviour
         target.Faction = faction;
 
         var steering = GetComponent<DriverSteeringBehaviour>();
-        steering.Vehicle = vehicle;
+        if (steering)
+        {
+            steering.Vehicle = vehicle;
+        }
 
         var generator = Instantiate(Generator, transform);
         HealthBars.Power = generator;
@@ -52,7 +56,16 @@ public class NPCDriverEquipment : MonoBehaviour
         {
             var weapon = Instantiate(Weapons[i], vehicle.HardPoints[i]);
             weapon.Generator = generator;
+            weapon.Owner = vehicle.gameObject;
             vehicle.Weapons.Add(weapon);
+        }
+
+        for (int i = 0; i < Turrets.Count; ++i)
+        {
+            var turret = Instantiate(Turrets[i], vehicle.Turrets[i]);
+            turret.Faction = faction;
+            turret.Generator = generator;
+            turret.Owner = vehicle.gameObject;
         }
     }
 }

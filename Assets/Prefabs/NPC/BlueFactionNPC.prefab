@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 114565724766394992}
   - component: {fileID: 114460999576926900}
   - component: {fileID: 114496632876709570}
+  - component: {fileID: 195627382968322858}
   m_Layer: 0
   m_Name: BlueFactionNPC
   m_TagString: Untagged
@@ -303,6 +304,7 @@ MonoBehaviour:
   StrategicBehaviour: {fileID: 114839356332822434}
   Vehicle: {fileID: 0}
   Faction: {fileID: 114173980144037942}
+  Agent: {fileID: 0}
 --- !u!114 &114950538136697838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -330,6 +332,27 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!195 &195627382968322858
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1537239223614504}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 2.5
+  m_Speed: 10.5
+  m_Acceleration: 10.5
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 10
+  m_AutoTraverseOffMeshLink: 0
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 4
 --- !u!222 &222041286317390944
 CanvasRenderer:
   m_ObjectHideFlags: 1

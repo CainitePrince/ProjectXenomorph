@@ -6,29 +6,18 @@ public class Vehicle : MonoBehaviour
     public float Acceleration = 1;
     public float RotationSpeed = 1;
     public Transform[] HardPoints;
+    public Transform[] Turrets;
     public List<Weapon> Weapons = new List<Weapon>();
     public float RaycastYOffset;
     public float RaycastLength;
     public Afterburner Afterburner;
 
-    //private bool usingAfterburner = false;
-
     void OnDrawGizmos()
     {
         Vector3 raycastOrigin = transform.parent.position;
         raycastOrigin.y += RaycastYOffset;
-        Gizmos.DrawLine(raycastOrigin, raycastOrigin + transform.right * RaycastLength);
+        Gizmos.DrawLine(raycastOrigin, raycastOrigin + transform.forward * RaycastLength);
     }
-
-    /*
-    public void UseAfterburner()
-    {
-        if (Afterburner != null)
-        {
-            usingAfterburner = Afterburner.Use();
-        }
-    }
-    */
 
     public void PushThrottle(bool useAfterburner = false)
     {
@@ -42,16 +31,11 @@ public class Vehicle : MonoBehaviour
             {
                 speedRatio = Afterburner.SpeedRatio;
             }
-            //usingAfterburner = false;
         }
 
-        //Debug.DrawLine(raycastOrigin, raycastOrigin + transform.right);
-        if (!Physics.Raycast(raycastOrigin, transform.right, RaycastLength))
+        if (!Physics.Raycast(raycastOrigin, transform.forward, RaycastLength))
         {
-            //Vector3 position = transform.parent.position;
-            //Debug.Log(speedRatio);
-            transform.parent.position += transform.parent.right * speedRatio * Acceleration * Time.deltaTime;
-            //transform.parent.localPosition = position;
+            transform.parent.position += transform.parent.forward * speedRatio * Acceleration * Time.deltaTime;
         }        
     }
 

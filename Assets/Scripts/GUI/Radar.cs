@@ -40,6 +40,8 @@ public class Radar : MonoBehaviour
 
     Vector3 playerPosition;
 
+    private int[] count = new int[9];
+
 	void Update ()
     {
         if (player != null)
@@ -48,7 +50,11 @@ public class Radar : MonoBehaviour
         }
 
         const float centerRadius = 10;
-        int[] count = new int[9];
+        //int[] count = new int[9];
+        for (int i = 0; i < 9; ++i)
+        {
+            count[i] = 0;
+        }
 
 	    foreach (var target in targetManager.PotentialTargets)
         {

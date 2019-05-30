@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114982767133010336}
   - component: {fileID: 114666447438941560}
   - component: {fileID: 114781311097821332}
+  - component: {fileID: 195613078212083730}
   m_Layer: 0
   m_Name: GreenFactionNPC
   m_TagString: Untagged
@@ -291,6 +292,7 @@ MonoBehaviour:
   StrategicBehaviour: {fileID: 114024533789811016}
   Vehicle: {fileID: 0}
   Faction: {fileID: 114352732586479520}
+  Agent: {fileID: 0}
 --- !u!114 &114982767133010336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -332,6 +334,27 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!195 &195613078212083730
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019237870348836}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 2.5
+  m_Speed: 13.5
+  m_Acceleration: 13.5
+  avoidancePriority: 50
+  m_AngularSpeed: 70
+  m_StoppingDistance: 5
+  m_AutoTraverseOffMeshLink: 0
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 4
 --- !u!222 &222042725091613484
 CanvasRenderer:
   m_ObjectHideFlags: 1

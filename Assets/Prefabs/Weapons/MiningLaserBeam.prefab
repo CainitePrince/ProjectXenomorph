@@ -52,16 +52,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec201f8d373ef3246a6a7b3a409c7aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
   Faction: 0
   ShieldDamage: 0
   ArmourDamage: 0
   Owner: {fileID: 0}
-  Type: 1
   EndTime: 0
   Line: {fileID: 120935609613695668}
   BeamStart: {x: 0, y: 0, z: 0}
   BeamEnd: {x: 0, y: 0, z: 0}
+  Pool: {fileID: 0}
+  Direction: {x: 0, y: 0, z: 0}
+  Front: {x: 0, y: 0, z: 0}
+  ExplosionRadius: 0
+  Gravity: {x: 0, y: 0, z: 0}
+  Mask:
+    serializedVersion: 2
+    m_Bits: 0
+  particles: {fileID: 0}
+  Type: 1
 --- !u!120 &120935609613695668
 LineRenderer:
   m_ObjectHideFlags: 1

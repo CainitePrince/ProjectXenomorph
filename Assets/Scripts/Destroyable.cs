@@ -25,12 +25,24 @@ public class Destroyable : MonoBehaviour
         if (discharge)
         {
             // Disregard self-collision
-            if (discharge.Owner != gameObject)
+            if (discharge.Owner == gameObject)
             {
-                discharge.Remove();
+                return;
             }
 
-            HandleHit(discharge.ShieldDamage, discharge.ArmourDamage, discharge.Faction);
+            if (discharge.ExplosionRadius > 0)
+            {
+                //Debug.Log("1:" + discharge.Owner.ToString() + ", 2: " + gameObject.ToString());
+
+                // Explode will call our HandleHit along with others within radius.
+                discharge.Explode();
+            }
+            else
+            {
+                discharge.Remove();
+ 
+                HandleHit(discharge.ShieldDamage, discharge.ArmourDamage, discharge.Faction);
+            }
         }
     }
 
@@ -47,9 +59,13 @@ public class Destroyable : MonoBehaviour
                 if (Shield.Buffer < 0)
                 {
                     float surplus = Mathf.Abs(Shield.Buffer);
+                    
+
                     Shield.Buffer = 0;
-                    float percentageLeft = 1.0f - surplus / shieldDamage;
+                    float percentageLeft = surplus / shieldDamage;
                     Armour.Buffer -= percentageLeft * armourDamage;
+
+                    Debug.Log(surplus + " " + percentageLeft + " " + (percentageLeft * armourDamage) + " " + (surplus / shieldDamage));
                 }
                 else
                 {

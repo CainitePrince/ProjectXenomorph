@@ -1,47 +1,48 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class RandomNPCDriver : MonoBehaviour
+namespace DuneRunner
 {
-    public Vehicle[] Vehicles;
-    public Shield[] Shields;
-    public Armour[] Armours;
-    public Generator[] Generators;
-    public Weapon[] Weapons;
-
-    static int count = 0;
-
-	void Awake ()
+    public class RandomNPCDriver : MonoBehaviour
     {
-        System.Random random = new System.Random(System.Environment.TickCount + count);
-        ++count;
+        public Vehicle[] Vehicles;
+        public Shield[] Shields;
+        public Armour[] Armours;
+        public Generator[] Generators;
+        public Weapon[] Weapons;
 
-        var equipment = GetComponent<NPCDriverEquipment>();
-        equipment.Generator = Generators[random.Next(Generators.Length)];
-        equipment.Vehicle = Vehicles[random.Next(Vehicles.Length)];
-        equipment.Armour = Armours[random.Next(Armours.Length)];
-        equipment.Shield = Shields[random.Next(Shields.Length)];
+        static int count = 0;
 
-        int numHardpoints = equipment.Vehicle.HardPoints.Length;
-        for (int i = 0; i < numHardpoints; ++i)
+        void Awake()
         {
-            equipment.Weapons.Add(Weapons[random.Next(Weapons.Length)]);
-        }
+            System.Random random = new System.Random(System.Environment.TickCount + count);
+            ++count;
 
-        //var faction = GetComponent<AssignedFaction>();
-        //faction.Faction = (Faction)random.Next(3);
+            var equipment = GetComponent<NPCDriverEquipment>();
+            equipment.Generator = Generators[random.Next(Generators.Length)];
+            equipment.Vehicle = Vehicles[random.Next(Vehicles.Length)];
+            equipment.Armour = Armours[random.Next(Armours.Length)];
+            equipment.Shield = Shields[random.Next(Shields.Length)];
 
-        var inventory = GetComponent<Inventory>();
-        inventory.Items.Add(equipment.Generator.gameObject);
-        inventory.Items.Add(equipment.Armour.gameObject);
-        if (equipment.Shield)
-        {
-            inventory.Items.Add(equipment.Shield.gameObject);
+            int numHardpoints = equipment.Vehicle.HardPoints.Length;
+            for (int i = 0; i < numHardpoints; ++i)
+            {
+                equipment.Weapons.Add(Weapons[random.Next(Weapons.Length)]);
+            }
+
+            //var faction = GetComponent<AssignedFaction>();
+            //faction.Faction = (Faction)random.Next(3);
+
+            var inventory = GetComponent<Inventory>();
+            inventory.Items.Add(equipment.Generator.gameObject);
+            inventory.Items.Add(equipment.Armour.gameObject);
+            if (equipment.Shield)
+            {
+                inventory.Items.Add(equipment.Shield.gameObject);
+            }
+            foreach (var weapon in equipment.Weapons)
+            {
+                inventory.Items.Add(weapon.gameObject);
+            }
         }
-        foreach (var weapon in equipment.Weapons)
-        {
-            inventory.Items.Add(weapon.gameObject);
-        }
-	}
+    }
 }

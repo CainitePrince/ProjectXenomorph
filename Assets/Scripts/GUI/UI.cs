@@ -1,49 +1,50 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class UI : MonoBehaviour
+namespace DuneRunner.GUI
 {
-    public Image        PowerBar;
-    public Image        ShieldBar;
-    public Image        ArmourBar;
-
-    public Text         CreditsValue;
-
-    public GameObject   Player;
-
-    private Generator   playerGenerator;
-    private Shield      playerShields;
-    private Armour      playerArmour;
-
-    private Inventory   playerInventory;
-	
-	void Update ()
+    public class UI : MonoBehaviour
     {
-        if (Player)
+        public Image PowerBar;
+        public Image ShieldBar;
+        public Image ArmourBar;
+
+        public Text CreditsValue;
+
+        public GameObject Player;
+
+        private Generator playerGenerator;
+        private Shield playerShields;
+        private Armour playerArmour;
+
+        private Inventory playerInventory;
+
+        void Update()
         {
-            if (playerArmour == null)
+            if (Player)
             {
-                playerArmour = Player.GetComponentInChildren<Armour>();
-                playerShields = Player.GetComponentInChildren<Shield>();
-                playerGenerator = Player.GetComponentInChildren<Generator>();
-                playerInventory = Player.GetComponent<Inventory>();
-            }
+                if (playerArmour == null)
+                {
+                    playerArmour = Player.GetComponentInChildren<Armour>();
+                    playerShields = Player.GetComponentInChildren<Shield>();
+                    playerGenerator = Player.GetComponentInChildren<Generator>();
+                    playerInventory = Player.GetComponent<Inventory>();
+                }
 
-            PowerBar.fillAmount = playerGenerator.AvailablePower / playerGenerator.Capacity;
-            ArmourBar.fillAmount = playerArmour.Buffer / playerArmour.Capacity;
-            if (playerShields)
-            {
-                ShieldBar.fillAmount = playerShields.Buffer / playerShields.Capacity;
-            }
-            else
-            {
-                ShieldBar.fillAmount = 0;
-            }
+                PowerBar.fillAmount = playerGenerator.AvailablePower / playerGenerator.Capacity;
+                ArmourBar.fillAmount = playerArmour.Buffer / playerArmour.Capacity;
+                if (playerShields)
+                {
+                    ShieldBar.fillAmount = playerShields.Buffer / playerShields.Capacity;
+                }
+                else
+                {
+                    ShieldBar.fillAmount = 0;
+                }
 
-            // This allocates memory
-            CreditsValue.text = playerInventory.Credits.ToString();
+                // This allocates memory
+                CreditsValue.text = playerInventory.Credits.ToString();
+            }
         }
-	}
+    }
 }

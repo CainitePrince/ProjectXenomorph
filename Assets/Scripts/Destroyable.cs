@@ -1,110 +1,113 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Destroyable : MonoBehaviour
+namespace DuneRunner
 {
-    public AssignedFaction AssignedFaction;
-    public Armour Armour;
-    public Shield Shield;
-    public GameObject ShieldBubble;
-    public GameObject DestroyThis;
-    public bool GodMode;
-
-    private ItemDrops drops;
-    private Inventory playerInventory;
-
-    void Start()
+    public class Destroyable : MonoBehaviour
     {
-        drops = GetComponentInParent<ItemDrops>();
-        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-    }
+        public AssignedFaction AssignedFaction;
+        public Armour Armour;
+        public Shield Shield;
+        public GameObject ShieldBubble;
+        public GameObject DestroyThis;
+        public bool GodMode;
 
-    void OnCollisionEnter(Collision col)
-    {
-        var discharge = col.gameObject.GetComponent<WeaponDischarge>();
-        if (discharge)
+        private ItemDrops drops;
+        private Inventory playerInventory;
+
+        void Start()
         {
-            // Disregard self-collision
-            if (discharge.Owner == gameObject)
-            {
-                return;
-            }
-
-            if (discharge.ExplosionRadius > 0)
-            {
-                //Debug.Log("1:" + discharge.Owner.ToString() + ", 2: " + gameObject.ToString());
-
-                // Explode will call our HandleHit along with others within radius.
-                discharge.Explode();
-            }
-            else
-            {
-                discharge.Remove();
- 
-                HandleHit(discharge.ShieldDamage, discharge.ArmourDamage, discharge.Faction);
-            }
+            drops = GetComponentInParent<ItemDrops>();
+            playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         }
-    }
 
-    public void HandleHit(float shieldDamage, float armourDamage, Faction faction)
-    {
-        if (GodMode) return;
-
-        if (faction != AssignedFaction.Faction)
+        void OnCollisionEnter(Collision col)
         {
-            if (Shield)
+            var discharge = col.gameObject.GetComponent<WeaponDischarge>();
+            if (discharge)
             {
-                Shield.Buffer -= shieldDamage;
-
-                if (Shield.Buffer < 0)
+                // Disregard self-collision
+                if (discharge.Owner == gameObject)
                 {
-                    float surplus = Mathf.Abs(Shield.Buffer);
-                    
+                    return;
+                }
 
-                    Shield.Buffer = 0;
-                    float percentageLeft = surplus / shieldDamage;
-                    Armour.Buffer -= percentageLeft * armourDamage;
+                if (discharge.ExplosionRadius > 0)
+                {
+                    //Debug.Log("1:" + discharge.Owner.ToString() + ", 2: " + gameObject.ToString());
 
-                    Debug.Log(surplus + " " + percentageLeft + " " + (percentageLeft * armourDamage) + " " + (surplus / shieldDamage));
+                    // Explode will call our HandleHit along with others within radius.
+                    discharge.Explode();
                 }
                 else
                 {
-                    StartCoroutine(ShieldFlicker());
+                    discharge.Remove();
+
+                    HandleHit(discharge.ShieldDamage, discharge.ArmourDamage, discharge.Faction);
                 }
             }
-            else
+        }
+
+        public void HandleHit(float shieldDamage, float armourDamage, Faction faction)
+        {
+            if (GodMode) return;
+
+            if (faction != AssignedFaction.Faction)
             {
-                Armour.Buffer -= armourDamage;
-            }
-
-            if (Armour.Buffer <= 0)
-            {
-                // Clean up object
-                Destroy(DestroyThis);
-
-                // Drop items, if applicable
-                if (drops)
+                if (Shield)
                 {
-                    drops.Drop();
-                }
+                    Shield.Buffer -= shieldDamage;
 
-                // Some NPC have bounties on them.
-                if (faction == Faction.Player)
-                {
-                    var bounty = GetComponentInParent<Bounty>();
-                    if (bounty)
+                    if (Shield.Buffer < 0)
                     {
-                        playerInventory.Credits += bounty.Credits;
+                        float surplus = Mathf.Abs(Shield.Buffer);
+
+
+                        Shield.Buffer = 0;
+                        float percentageLeft = surplus / shieldDamage;
+                        Armour.Buffer -= percentageLeft * armourDamage;
+
+                        Debug.Log(surplus + " " + percentageLeft + " " + (percentageLeft * armourDamage) + " " + (surplus / shieldDamage));
+                    }
+                    else
+                    {
+                        StartCoroutine(ShieldFlicker());
+                    }
+                }
+                else
+                {
+                    Armour.Buffer -= armourDamage;
+                }
+
+                if (Armour.Buffer <= 0)
+                {
+                    // Clean up object
+                    Destroy(DestroyThis);
+
+                    // Drop items, if applicable
+                    if (drops)
+                    {
+                        drops.Drop();
+                    }
+
+                    // Some NPC have bounties on them.
+                    if (faction == Faction.Player)
+                    {
+                        var bounty = GetComponentInParent<Bounty>();
+                        if (bounty)
+                        {
+                            playerInventory.Credits += bounty.Credits;
+                        }
                     }
                 }
             }
         }
-    }
 
-    IEnumerator ShieldFlicker()
-    {
-        ShieldBubble.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        ShieldBubble.SetActive(false);
+        IEnumerator ShieldFlicker()
+        {
+            ShieldBubble.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
+            ShieldBubble.SetActive(false);
+        }
     }
 }

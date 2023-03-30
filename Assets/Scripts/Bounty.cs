@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Bounty : MonoBehaviour
+namespace DuneRunner
 {
-    public float Credits;
+    public class Bounty : MonoBehaviour
+    {
+        public float Credits;
+    }
 }

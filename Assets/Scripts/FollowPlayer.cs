@@ -1,18 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+namespace DuneRunner
 {
-    public Player Player;
-	
-	void Update ()
+    public class FollowPlayer : MonoBehaviour
     {
-        if (Player)
+        public Player Player;
+
+        void Update()
         {
-            Vector3 position = Player.transform.position;
-            position.y = transform.position.y;
-            transform.position = position;
+            if (Player)
+            {
+                Vector3 position = Player.transform.position;
+                position.y = transform.position.y;
+                transform.position = position;
+            }
         }
-	}
+    }
 }

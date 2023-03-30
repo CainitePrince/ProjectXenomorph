@@ -1,45 +1,46 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class NPCHealthBars : MonoBehaviour
+namespace DuneRunner
 {
-    public Image PowerBar;
-    public Image ShieldBar;
-    public Image ArmourBar;
-
-    public Generator Power;
-    public Armour Armour;
-    public Shield Shield;
-	
-    void Start()
+    public class NPCHealthBars : MonoBehaviour
     {
-        //Power = GetComponentInParent<Generator>();
-        //Armour = GetComponentInParent<Armour>();
-        //Shield = GetComponentInParent<Shield>();
-        //if (Shield == null)
-        //{
-        //    ShieldBar.enabled = false;
-        //}
-    }
+        public Image PowerBar;
+        public Image ShieldBar;
+        public Image ArmourBar;
 
-	void Update ()
-    {
-        Camera camera = Camera.main;
+        public Generator Power;
+        public Armour Armour;
+        public Shield Shield;
 
-        transform.LookAt(transform.position + camera.transform.rotation * Vector3.back, camera.transform.rotation * Vector3.up);
-
-        PowerBar.fillAmount = Power.AvailablePower / Power.Capacity;
-
-        if (Shield != null)
+        void Start()
         {
-            ShieldBar.fillAmount = Shield.Buffer / Shield.Capacity;
+            //Power = GetComponentInParent<Generator>();
+            //Armour = GetComponentInParent<Armour>();
+            //Shield = GetComponentInParent<Shield>();
+            //if (Shield == null)
+            //{
+            //    ShieldBar.enabled = false;
+            //}
         }
-        else
+
+        void Update()
         {
-            ShieldBar.enabled = false;
+            Camera camera = Camera.main;
+
+            transform.LookAt(transform.position + camera.transform.rotation * Vector3.back, camera.transform.rotation * Vector3.up);
+
+            PowerBar.fillAmount = Power.AvailablePower / Power.Capacity;
+
+            if (Shield != null)
+            {
+                ShieldBar.fillAmount = Shield.Buffer / Shield.Capacity;
+            }
+            else
+            {
+                ShieldBar.enabled = false;
+            }
+            ArmourBar.fillAmount = Armour.Buffer / Armour.Capacity;
         }
-        ArmourBar.fillAmount = Armour.Buffer / Armour.Capacity;
     }
 }

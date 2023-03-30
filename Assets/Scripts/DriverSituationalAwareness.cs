@@ -1,33 +1,35 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class DriverSituationalAwareness : MonoBehaviour
+namespace DuneRunner
 {
-    public List<Transform> Targets;
-    public AssignedFaction Faction;
-
-    private TargetManager targetManager;
-
-    void Start()
+    public class DriverSituationalAwareness : MonoBehaviour
     {
-        targetManager = FindObjectOfType<TargetManager>();
-    }
+        public List<Transform> Targets;
+        public AssignedFaction Faction;
 
-	void AcquireTargets()
-    {
-        Targets.Clear();
-        foreach (Target target in targetManager.PotentialTargets)
+        private TargetManager targetManager;
+
+        void Start()
         {
-            if (Faction.Faction != target.Faction.Faction)
+            targetManager = FindObjectOfType<TargetManager>();
+        }
+
+        void AcquireTargets()
+        {
+            Targets.Clear();
+            foreach (Target target in targetManager.PotentialTargets)
             {
-                Targets.Add(target.transform);
+                if (Faction.Faction != target.Faction.Faction)
+                {
+                    Targets.Add(target.transform);
+                }
             }
         }
-    }
 
-	void Update ()
-    {
-        AcquireTargets();
-	}
+        void Update()
+        {
+            AcquireTargets();
+        }
+    }
 }

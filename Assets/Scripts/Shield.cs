@@ -1,28 +1,30 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Shield : MonoBehaviour
+namespace DuneRunner
 {
-    public float Capacity;
-    public float Buffer;
-    public float UnitsRechargedPerSecond;
-    public float PowerConsumption;
-    //public GameObject ShieldBubble;
-    public Generator Generator;
-
-	void Update ()
+    public class Shield : MonoBehaviour
     {
-        // Amount that we can recharge because of capacity
-        float possibleRecharge = Mathf.Clamp(UnitsRechargedPerSecond * Time.deltaTime, 0, Capacity - Buffer);
-        
-        // Amount of power required for recharge
-        float powerConsumption = possibleRecharge * PowerConsumption * Time.deltaTime;
+        public float Capacity;
+        public float Buffer;
+        public float UnitsRechargedPerSecond;
+        public float PowerConsumption;
+        //public GameObject ShieldBubble;
+        public Generator Generator;
 
-        // Recharge if power allows
-        if (Generator.AvailablePower >= powerConsumption)
+        void Update()
         {
-            Generator.AvailablePower -= powerConsumption;
-            Buffer = Mathf.Clamp(Buffer + possibleRecharge, 0, Capacity);
+            // Amount that we can recharge because of capacity
+            float possibleRecharge = Mathf.Clamp(UnitsRechargedPerSecond * Time.deltaTime, 0, Capacity - Buffer);
+
+            // Amount of power required for recharge
+            float powerConsumption = possibleRecharge * PowerConsumption * Time.deltaTime;
+
+            // Recharge if power allows
+            if (Generator.AvailablePower >= powerConsumption)
+            {
+                Generator.AvailablePower -= powerConsumption;
+                Buffer = Mathf.Clamp(Buffer + possibleRecharge, 0, Capacity);
+            }
         }
     }
 }

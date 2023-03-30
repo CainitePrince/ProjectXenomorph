@@ -1,19 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public enum Faction
+namespace DuneRunner
 {
-    Red,
-    Blue,
-    Green,
-    Player,
-    Pirate,
-    Neutral,
-    Civilian
-};
+    public enum Faction
+    {
+        Red,
+        Blue,
+        Green,
+        Player,
+        Pirate,
+        Neutral,
+        Civilian
+    };
 
-public class AssignedFaction : MonoBehaviour
-{
-    public Faction Faction;
+    public class AssignedFaction : MonoBehaviour
+    {
+        public Faction Faction;
+    }
 }

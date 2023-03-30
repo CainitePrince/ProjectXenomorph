@@ -1,15 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Blocker : MonoBehaviour
+namespace DuneRunner
 {
-    void OnCollisionEnter(Collision col)
+    public class Blocker : MonoBehaviour
     {
-        var discharge = col.gameObject.GetComponent<WeaponDischarge>();
-        if (discharge)
+        void OnCollisionEnter(Collision col)
         {
-            discharge.Remove();
+            var discharge = col.gameObject.GetComponent<WeaponDischarge>();
+            if (discharge)
+            {
+                discharge.Remove();
+            }
         }
     }
 }

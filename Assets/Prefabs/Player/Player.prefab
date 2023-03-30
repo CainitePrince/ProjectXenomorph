@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8589905444266154258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8589905444266154254}
+  - component: {fileID: 8589905444266154253}
+  - component: {fileID: 8589905444266154250}
+  - component: {fileID: 8589905444266154257}
+  - component: {fileID: 8589905444266154256}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8589905444266154254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8589905444266154258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 124.67, y: 0.213, z: 144.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8589905444266154253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8589905444266154258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5158c94db868a3f4b869824d2c127105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vehicle: {fileID: 0}
+  InventoryScreen: {fileID: 0}
+  GameScreen: {fileID: 0}
+--- !u!114 &8589905444266154250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8589905444266154258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f7aee04177f5542abd140778d3f424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Faction: 3
+--- !u!114 &8589905444266154257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8589905444266154258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d28122add4a7543b456a784d70dc92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vehicle: {fileID: 114534466789250934, guid: ca58af540a99ee4409b8aff7c79e7e8b, type: 3}
+  Armour: {fileID: 114336176503854524, guid: f486f25853c649b45806dca8c532fd28, type: 3}
+  Shield: {fileID: 114642796244653444, guid: 91527e12db39ee146b97a0eed5eba1b8, type: 3}
+  Generator: {fileID: 114353720094437220, guid: 7c7ff7ecba84895429d4c34e7a2ef965,
+    type: 3}
+  Weapons:
+  - {fileID: 114830403862627968, guid: bd6954fc83db4024098a7e2de8712d15, type: 3}
+  - {fileID: 114830403862627968, guid: bd6954fc83db4024098a7e2de8712d15, type: 3}
+  - {fileID: 114830403862627968, guid: d47eb14e08f70d743a8f8fee42035370, type: 3}
+  Afterburner: {fileID: 114011773107736858, guid: 47e655d42be33844cbdae20bef4e40b4,
+    type: 3}
+  Turrets: []
+--- !u!114 &8589905444266154256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8589905444266154258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9dbeedf80721554fb9f8226ccf5941f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Items:
+  - {fileID: 1072334018019100, guid: 589eb39663bfac84abb8fe20e9d172ab, type: 3}
+  - {fileID: 1719512228091430, guid: 2e619fa4e0849b34da4068f8756e39e3, type: 3}
+  - {fileID: 1345855025313638, guid: 6d15a088ab8b3ea4cbd105ddd487a149, type: 3}
+  Credits: 0

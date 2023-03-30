@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Armour : MonoBehaviour
+namespace DuneRunner
 {
-    public float Buffer;
-    public float Capacity;
+    public class Armour : MonoBehaviour
+    {
+        public float Buffer;
+        public float Capacity;
+    }
 }

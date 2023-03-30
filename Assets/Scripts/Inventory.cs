@@ -1,20 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+namespace DuneRunner
 {
-    public List<GameObject>     Items;
-    public float                Credits;
-
-    void Start()
+    public class Inventory : MonoBehaviour
     {
-        var drops = GetComponent<ItemDrops>();
-        if (drops)
+        public List<GameObject> Items;
+        public float Credits;
+
+        void Start()
         {
-            foreach (var item in Items)
+            var drops = GetComponent<ItemDrops>();
+            if (drops)
             {
-                drops.Drops.Add(item);
+                foreach (var item in Items)
+                {
+                    drops.Drops.Add(item);
+                }
             }
         }
     }

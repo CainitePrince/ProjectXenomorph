@@ -1,46 +1,49 @@
 ﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace DuneRunner
 {
-    public Vehicle Vehicle;
-    public GameObject InventoryScreen;
-    public GameObject GameScreen;
-
-	void Update ()
+    public class Player : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        public Vehicle Vehicle;
+        public GameObject InventoryScreen;
+        public GameObject GameScreen;
+
+        void Update()
         {
-            if (!InventoryScreen.activeInHierarchy)
+            if (Input.GetKeyDown(KeyCode.I))
             {
-                InventoryScreen.SetActive(true);
-                GameScreen.SetActive(false);
+                if (!InventoryScreen.activeInHierarchy)
+                {
+                    InventoryScreen.SetActive(true);
+                    GameScreen.SetActive(false);
+                }
+                else
+                {
+                    InventoryScreen.SetActive(false);
+                    GameScreen.SetActive(true);
+                }
             }
-            else
+
+            if (Input.GetKey(KeyCode.UpArrow))
             {
-                InventoryScreen.SetActive(false);
-                GameScreen.SetActive(true);
+                //Debug.Log(tab);
+                Vehicle.PushThrottle(Input.GetKey(KeyCode.Tab));
+            }
+
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                Vehicle.SteerLeft();
+            }
+
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                Vehicle.SteerRight();
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Vehicle.DischargeWeapons(Faction.Player);
             }
         }
-
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            //Debug.Log(tab);
-            Vehicle.PushThrottle(Input.GetKey(KeyCode.Tab));
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            Vehicle.SteerLeft();
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            Vehicle.SteerRight();
-        }
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Vehicle.DischargeWeapons(Faction.Player);
-        }
-	}
+    }
 }

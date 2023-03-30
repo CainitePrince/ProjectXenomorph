@@ -1,31 +1,34 @@
 ﻿using UnityEngine;
 
-public class Afterburner : MonoBehaviour
+namespace DuneRunner
 {
-    public float SpeedRatio;
-    public float PowerConsumption;
-    public Generator Generator;
-    public Vehicle Vehicle;
-
-    float nextFireTime;
-
-    void Start()
+    public class Afterburner : MonoBehaviour
     {
-        nextFireTime = Time.time;
-    }
+        public float SpeedRatio;
+        public float PowerConsumption;
+        public Generator Generator;
+        public Vehicle Vehicle;
 
-    public bool Use()
-    {
-        if ((PowerConsumption * Time.deltaTime) <= Generator.AvailablePower && Time.time >= nextFireTime)
+        float nextFireTime;
+
+        void Start()
         {
-            Generator.AvailablePower -= PowerConsumption * Time.deltaTime;
-            return true;
+            nextFireTime = Time.time;
         }
-        else
+
+        public bool Use()
         {
-            nextFireTime = Time.time + 0.1f;
+            if ((PowerConsumption * Time.deltaTime) <= Generator.AvailablePower && Time.time >= nextFireTime)
+            {
+                Generator.AvailablePower -= PowerConsumption * Time.deltaTime;
+                return true;
+            }
+            else
+            {
+                nextFireTime = Time.time + 0.1f;
+            }
+
+            return false;
         }
-        
-        return false;
     }
 }

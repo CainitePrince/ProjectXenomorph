@@ -1,21 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Target : MonoBehaviour
+namespace DuneRunner
 {
-    public AssignedFaction Faction;
-
-    TargetManager targetManager;
-
-	void Start ()
+    public class Target : MonoBehaviour
     {
-        targetManager = GameObject.FindObjectOfType<TargetManager>();
-        targetManager.PotentialTargets.Add(this);
-	}
-    
-    void OnDestroy()
-    {
-        targetManager.PotentialTargets.Remove(this);
+        public AssignedFaction Faction;
+
+        TargetManager targetManager;
+
+        void Start()
+        {
+            targetManager = GameObject.FindObjectOfType<TargetManager>();
+            targetManager.PotentialTargets.Add(this);
+        }
+
+        void OnDestroy()
+        {
+            targetManager.PotentialTargets.Remove(this);
+        }
     }
 }
